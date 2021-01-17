@@ -1,6 +1,6 @@
 /*
  * JBoss, Home of Professional Open Source
- * Copyright 2014, Red Hat, Inc. and/or its affiliates, and individual
+ * Copyright 2015, Red Hat, Inc. and/or its affiliates, and individual
  * contributors by the @authors tag. See the copyright.txt in the
  * distribution for a full listing of individual contributors.
  *
@@ -21,20 +21,19 @@ import java.util.Date;
 import javax.ejb.Schedule;
 import javax.ejb.Singleton;
 
-
 /**
  * Demonstrates how to use the EJB's @Schedule.
- * 
+ *
  * @author <a href="mailto:ozizka@redhat.com">Ondrej Zizka</a>
  */
 @Singleton
 public class ScheduleExample {
-  
-    @Schedule(second="*/6", minute="*",hour="*", persistent=false)
-    public void doWork(){
+
+    @Schedule(second = "*/6", minute = "*", hour = "*", persistent = false)
+    public void doWork() {
         Date currentTime = new Date();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z");
-        System.out.println( "ScheduleExample.doWork() invoked at " + simpleDateFormat.format(currentTime) );
+        System.out.println("ScheduleExample.doWork() invoked at " + simpleDateFormat.format(currentTime));
     }
-    
+
 }

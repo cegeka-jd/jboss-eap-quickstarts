@@ -1,6 +1,6 @@
 /*
  * JBoss, Home of Professional Open Source
- * Copyright 2014, Red Hat, Inc. and/or its affiliates, and individual
+ * Copyright 2015, Red Hat, Inc. and/or its affiliates, and individual
  * contributors by the @authors tag. See the copyright.txt in the
  * distribution for a full listing of individual contributors.
  *
@@ -22,12 +22,12 @@ import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
 
 /**
- * This class uses CDI to alias Java EE resources, such as the persistence context, to CDI beans
- * 
+ * This class uses CDI to alias Jakarta EE resources, such as the persistence context, to CDI beans
+ *
  * <p>
  * Example injection on a managed bean field:
  * </p>
- * 
+ *
  */
 public class Resources {
 

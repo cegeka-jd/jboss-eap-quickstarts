@@ -1,6 +1,6 @@
 /*
  * JBoss, Home of Professional Open Source
- * Copyright 2014, Red Hat, Inc. and/or its affiliates, and individual
+ * Copyright 2015, Red Hat, Inc. and/or its affiliates, and individual
  * contributors by the @authors tag. See the copyright.txt in the
  * distribution for a full listing of individual contributors.
  *
@@ -43,7 +43,7 @@ public class ManagedComponent {
     /**
      * Ask the container to inject an Entity Manager (EM). As a consequence the EM will be automatically enlisted into any new
      * transactions started by the managed component.
-     * 
+     *
      */
     @PersistenceContext
     private EntityManager entityManager;

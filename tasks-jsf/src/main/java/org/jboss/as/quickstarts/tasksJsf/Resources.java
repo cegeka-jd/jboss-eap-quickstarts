@@ -1,6 +1,6 @@
 /*
  * JBoss, Home of Professional Open Source
- * Copyright 2014, Red Hat, Inc. and/or its affiliates, and individual
+ * Copyright 2015, Red Hat, Inc. and/or its affiliates, and individual
  * contributors by the @authors tag. See the copyright.txt in the
  * distribution for a full listing of individual contributors.
  *
@@ -28,16 +28,16 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
 
 /**
- * This class uses CDI to alias Java EE resources, such as the persistence context, to CDI beans. As it is a stateful bean, it
+ * This class uses CDI to alias Jakarta EE resources, such as the persistence context, to CDI beans. As it is a stateful bean, it
  * can produce extended persistence contexts.
- * 
+ *
  * Example injection on a managed bean field:
- * 
+ *
  * &#064;Inject private EntityManager em;
- * 
+ *
  * @author Pete Muir
  * @author Lukas Fryc
- * 
+ *
  */
 @Stateful
 @RequestScoped

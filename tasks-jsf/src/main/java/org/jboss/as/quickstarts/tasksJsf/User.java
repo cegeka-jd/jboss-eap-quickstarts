@@ -1,6 +1,6 @@
 /*
  * JBoss, Home of Professional Open Source
- * Copyright 2014, Red Hat, Inc. and/or its affiliates, and individual
+ * Copyright 2015, Red Hat, Inc. and/or its affiliates, and individual
  * contributors by the @authors tag. See the copyright.txt in the
  * distribution for a full listing of individual contributors.
  *
@@ -31,7 +31,7 @@ import javax.persistence.OneToMany;
 
 /**
  * User entity
- * 
+ *
  * @author Oliver Kiss
  */
 @SuppressWarnings("serial")
@@ -47,7 +47,7 @@ public class User implements Serializable {
 
     @OneToMany(cascade = ALL, mappedBy = "owner")
     @Column(updatable = false)
-    private List<Task> tasks = new ArrayList<Task>();
+    private List<Task> tasks = new ArrayList<>();
 
     public User() {
     }

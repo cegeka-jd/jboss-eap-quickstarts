@@ -1,6 +1,6 @@
 /*
  * JBoss, Home of Professional Open Source
- * Copyright 2014, Red Hat, Inc. and/or its affiliates, and individual
+ * Copyright 2015, Red Hat, Inc. and/or its affiliates, and individual
  * contributors by the @authors tag. See the copyright.txt in the
  * distribution for a full listing of individual contributors.
  *
@@ -84,7 +84,7 @@ public class TransactionServlet extends HttpServlet {
      * parameter "strategy" is not set to the value "managed" then both the transaction and the EntityManager are controlled
      * manually. Otherwise the Entity Manager is controlled by the container and the transaction is controlled by the developer.
      * </p>
-     * 
+     *
      * @param req the HTTP request
      * @param resp the HTTP response
      * @throws ServletException

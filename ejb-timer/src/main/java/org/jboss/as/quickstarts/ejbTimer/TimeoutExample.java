@@ -1,6 +1,6 @@
 /*
  * JBoss, Home of Professional Open Source
- * Copyright 2014, Red Hat, Inc. and/or its affiliates, and individual
+ * Copyright 2015, Red Hat, Inc. and/or its affiliates, and individual
  * contributors by the @authors tag. See the copyright.txt in the
  * distribution for a full listing of individual contributors.
  *
@@ -21,13 +21,17 @@ import java.util.Date;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
-import javax.ejb.*;
-import javax.interceptor.InvocationContext;
-
+import javax.ejb.ScheduleExpression;
+import javax.ejb.Singleton;
+import javax.ejb.Startup;
+import javax.ejb.Timeout;
+import javax.ejb.Timer;
+import javax.ejb.TimerConfig;
+import javax.ejb.TimerService;
 
 /**
  * Demonstrates how to use the EJB's @Timeout.
- * 
+ *
  * @author <a href="mailto:ozizka@redhat.com">Ondrej Zizka</a>
  */
 @Singleton
@@ -36,24 +40,24 @@ public class TimeoutExample {
 
     @Resource
     private TimerService timerService;
-    
+
     @Timeout
     public void scheduler(Timer timer) {
         Date currentTime = new Date();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z");
         System.out.println("TimeoutExample.scheduler() " + timer.getInfo() + simpleDateFormat.format(currentTime));
     }
-    
+
     @PostConstruct
-    public void initialize( InvocationContext ctx ) {
+    public void initialize() {
         ScheduleExpression se = new ScheduleExpression();
         // Set schedule to every 3 seconds (starting at second 0 of every minute).
         se.hour("*").minute("*").second("0/3");
-        timerService.createCalendarTimer( se, new TimerConfig("EJB timer service timeout at ", false) );
+        timerService.createCalendarTimer(se, new TimerConfig("EJB timer service timeout at ", false));
     }
-    
+
     @PreDestroy
-    public void stop() {    
+    public void stop() {
         System.out.println("EJB Timer: Stop timers.");
         for (Timer timer : timerService.getTimers()) {
             System.out.println("Stopping timer: " + timer.getInfo());
